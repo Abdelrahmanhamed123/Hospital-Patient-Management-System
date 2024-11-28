@@ -19,5 +19,41 @@ public class Patient
         this.medicalHistory = medicalHistory;
         this.visitRecords = new ArrayList<>(); 
     }
+    public String getPatientID() {
+        return patientID;
+    }
+    public String getContactInfo() {
+        return contactInfo;
+    }
+    public int getAge() {
+        return age;
+    }
+    public String getMedicalHistory() {
+        return medicalHistory;
+    }
+    public String getName() {
+        return name;
+    }
+    public List<Appointment> getVisitRecords() {
+        return visitRecords;
+    }
+    public void displayPatientInfo() {
+        System.out.println("Patient ID: " + patientID);
+        System.out.println("Name: " + name);
+        System.out.println("Age: " + age);
+        System.out.println("Contact Info: " + contactInfo);
+        System.out.println("Medical History: " + medicalHistory);
     
-}
+        if (visitRecords.isEmpty()) {
+            System.out.println("No visits recorded.");
+        } else {
+            System.out.println("Visit Records:");
+            for (Appointment appointment : visitRecords) {
+                System.out.println("    Appointment ID: " + appointment.getAppointmentID() +
+                                   ", Date: " + appointment.getDate() +
+                                   ", Time: " + appointment.getTime() +
+                                   ", Status: " + appointment.getStatus());
+            }
+        }
+    }
+}    
