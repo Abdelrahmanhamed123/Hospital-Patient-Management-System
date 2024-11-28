@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient and PatientBST Class Documentation</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            background-color: white;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .class-section {
+            margin-bottom: 20px;
+        }
+
+        .method {
+            background-color: #f9f9f9;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 5px solid #4CAF50;
+        }
+
+        .method h3 {
+            margin-top: 0;
+            color: #333;
+        }
+
+        .method p {
+            margin: 5px 0;
+        }
+
+        code {
+            background-color: #f4f4f4;
+            font-family: monospace;
+            padding: 2px 4px;
+            border-radius: 4px;
+        }
+
+        strong {
+            color: #333;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Patient and PatientBST Classes Documentation</h1>
+
+        <section class="class-section">
+            <h2>Patient Class Methods</h2>
+
+            <div class="method">
+                <h3>1. getPatientID()</h3>
+                <p><strong>Purpose:</strong> Returns the unique identifier (patientID) of the patient.</p>
+                <p><strong>Explanation:</strong> This method is a simple getter that allows external access to the <code>patientID</code> field of the <code>Patient</code> class.</p>
+            </div>
+
+            <div class="method">
+                <h3>2. getContactInfo()</h3>
+                <p><strong>Purpose:</strong> Returns the contact information of the patient.</p>
+                <p><strong>Explanation:</strong> This is another getter method that returns the <code>contactInfo</code> field, which stores the patient's contact details (e.g., phone number or email).</p>
+            </div>
+
+            <div class="method">
+                <h3>3. getAge()</h3>
+                <p><strong>Purpose:</strong> Returns the age of the patient.</p>
+                <p><strong>Explanation:</strong> This method is a getter for the <code>age</code> field. It returns the patient's age as an integer.</p>
+            </div>
+
+            <div class="method">
+                <h3>4. getMedicalHistory()</h3>
+                <p><strong>Purpose:</strong> Returns the medical history of the patient.</p>
+                <p><strong>Explanation:</strong> This method returns the <code>medicalHistory</code> field, which contains information about the patient's past illnesses, treatments, surgeries, etc.</p>
+            </div>
+
+            <div class="method">
+                <h3>5. getName()</h3>
+                <p><strong>Purpose:</strong> Returns the name of the patient.</p>
+                <p><strong>Explanation:</strong> This method simply returns the <code>name</code> field of the patient, which stores the patient's full name.</p>
+            </div>
+
+            <div class="method">
+                <h3>6. getVisitRecords()</h3>
+                <p><strong>Purpose:</strong> Returns the list of visit records (appointments) associated with the patient.</p>
+                <p><strong>Explanation:</strong> This method returns the <code>visitRecords</code> list, which contains all the <code>Appointment</code> objects associated with the patient. The list may be empty if no visits have been recorded yet.</p>
+            </div>
+
+            <div class="method">
+                <h3>7. updateContactInfo(String newContactInfo)</h3>
+                <p><strong>Purpose:</strong> Updates the contact information for the patient.</p>
+                <p><strong>Explanation:</strong> This method takes a string argument (<code>newContactInfo</code>) and updates the <code>contactInfo</code> field with the new contact details. It also prints a message ("contact updated") to indicate that the patient's contact information has been successfully updated.</p>
+            </div>
+
+            <div class="method">
+                <h3>8. addvisits(Appointment visit)</h3>
+                <p><strong>Purpose:</strong> Adds a new appointment to the patient's visit records.</p>
+                <p><strong>Explanation:</strong> This method takes an <code>Appointment</code> object (<code>visit</code>) and adds it to the <code>visitRecords</code> list. It also prints a message indicating that the visit has been added, including the appointment ID and patient name.</p>
+            </div>
+
+            <div class="method">
+                <h3>9. displayPatientInfo()</h3>
+                <p><strong>Purpose:</strong> Displays detailed information about the patient.</p>
+                <p><strong>Explanation:</strong> This method prints out the patient's details such as <code>patientID</code>, <code>name</code>, <code>age</code>, <code>contactInfo</code>, and <code>medicalHistory</code>. It also checks if there are any visit records. If there are, it iterates over the <code>visitRecords</code> list and prints the details of each visit (appointment ID, date, time, and status).</p>
+            </div>
+        </section>
+
+        <section class="class-section">
+            <h2>PatientBST Class Methods</h2>
+
+            <div class="method">
+                <h3>1. insert(Patient patient)</h3>
+                <p><strong>Purpose:</strong> Inserts a new patient into the binary search tree (BST).</p>
+                <p><strong>Explanation:</strong> This method starts the process of inserting a new <code>Patient</code> object into the BST. It calls the private helper method <code>insertRecursive</code> to perform the actual insertion. It ensures that patients are inserted in the correct position based on their <code>patientID</code> in ascending order.</p>
+            </div>
+
+            <div class="method">
+                <h3>2. insertRecursive(Node root, Patient patient)</h3>
+                <p><strong>Purpose:</strong> Recursively inserts a patient into the BST.</p>
+                <p><strong>Explanation:</strong> This method compares the <code>patientID</code> of the current node with the <code>patientID</code> of the new patient and determines where to insert the new patient in the BST. It ensures that the tree maintains its ordered structure.</p>
+            </div>
+
+            <div class="method">
+                <h3>3. search(String patientID)</h3>
+                <p><strong>Purpose:</strong> Searches for a patient by their <code>patientID</code> in the BST.</p>
+                <p><strong>Explanation:</strong> This method initiates the search by calling the private helper method <code>searchRecursive</code>. It looks for a matching patient in the BST and returns the <code>Patient</code> object if found, or <code>null</code> if not found.</p>
+            </div>
+
+            <div class="method">
+                <h3>4. searchRecursive(Node current, String patientID)</h3>
+                <p><strong>Purpose:</strong> Recursively searches for a patient by <code>patientID</code> in the BST.</p>
+                <p><strong>Explanation:</strong> This method searches through the BST recursively and returns the <code>Patient</code> object if a match is found, or <code>null</code> if no match is found.</p>
+            </div>
+
+            <div class="method">
+                <h3>5. delete(String patientID)</h3>
+                <p><strong>Purpose:</strong> Deletes a patient from the BST by their <code>patientID</code>.</p>
+                <p><strong>Explanation:</strong> This method deletes a patient from the BST by calling the helper method <code>deleteRecursive</code>. It handles various deletion cases, including deleting nodes with no children, one child, or two children.</p>
+            </div>
+
+            <div class="method">
+                <h3>6. deleteRecursive(Node current, String patientID)</h3>
+                <p><strong>Purpose:</strong> Recursively deletes a patient from the BST.</p>
+                <p><strong>Explanation:</strong> This helper method finds the node to delete and handles the deletion process. It ensures that the tree structure remains intact after the node is deleted.</p>
+            </div>
+
+            <div class="method">
+                <h3>7. findSmallest(Node root)</h3>
+                <p><strong>Purpose:</strong> Finds the smallest patient node in the BST.</p>
+                <p><strong>Explanation:</strong> This method is used during the deletion of a node with two children. It finds the smallest node in the right subtree of the current node to replace the node being deleted.</p>
+            </div>
+
+            <div class="method">
+                <h3>8. displayInOrder()</h3>
+                <p><strong>Purpose:</strong> Displays the patients in the BST in ascending order of their <code>patientID</code>.</p>
+                <p><strong>Explanation:</strong> This method starts the in-order traversal of the BST by calling <code>displayInOrderRecursive</code>, which prints the details of all patients in ascending order.</p>
+            </div>
+
+            <div class="method">
+                <h3>9. displayInOrderRecursive(Node current)</h3>
+                <p><strong>Purpose:</strong> Recursively displays the patients in the BST in ascending order.</p>
+                <p><strong>Explanation:</strong> This recursive helper method performs the in-order traversal of the BST and prints the details of each patient using the <code>displayPatientInfo()</code> method.</p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>
