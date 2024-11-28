@@ -18,6 +18,14 @@ public class Date
             this.hour = hour;
             this.minute = minute;
         }
+        @Override
+        public String toString() {
+            return String.format("%02d:%02d", hour, minute); // Format as HH:mm
+        }
+    }
+    @Override
+    public String toString() {
+        return String.format("%02d-%02d", month, day); 
     }
 }
 
