@@ -41,9 +41,9 @@ public class Patient
         this.contactInfo = newContactInfo;
        System.out.println(" contact updated ");
     }
-    public void addvisits( String newVisits){
-        this.visitRecords.add(newVisits);
-        System.out.println("visit is added for   "+name +" :"+newVisits);
+    public void addvisits( Appointment visit){
+        this.visitRecords.add(visit);
+        System.out.println("visit is added for   "+name +" :"+visit.getAppointmentID());
     }
     public void displayPatientInfo() {
         System.out.println("Patient ID: " + patientID);
